@@ -41,7 +41,6 @@ inputs:
         App file path, for example to an APK file for Android.
       is_expand: true
       is_required: true
-      value_options: []
   - app_center_app: "$APP_CENTER_APP"
     opts:
       title: "App Center app"
@@ -50,7 +49,6 @@ inputs:
         Get all available apps using cli "appcenter apps list".
       is_expand: true
       is_required: true
-      value_options: []
   - app_center_token: "$APP_CENTER_TOKEN"
     opts:
       title: "App Center API token"
@@ -59,4 +57,3 @@ inputs:
         Create API token using cli "appcenter tokens create".
       is_expand: true
       is_required: true
-      value_options: []
