@@ -34,29 +34,17 @@ echo
 # ---------------------
 # --- Main
 
-npm config list
-
-npm install appcenter-cli@1.0.5 -g
-
 LAUNCH_TEST_DIR="${BITRISE_SOURCE_DIR}/app-center-launch-test-android"
 OUTPUT_PATH="${LAUNCH_TEST_DIR}/GeneratedTest"
 ARTIFACTS_DIR="${LAUNCH_TEST_DIR}/Artifacts"
-PLATFORM="Android"
 SOLUTION="${OUTPUT_PATH}/AppCenter.UITest.Android.sln"
 BUILD_DIR="${OUTPUT_PATH}/AppCenter.UITest.Android/bin/Release"
 MANIFEST_PATH="${ARTIFACTS_DIR}/manifest.json"
 
-# TODO remove - only for debug testing
-if [ -d "${OUTPUT_PATH}" ] ; then
-  rm -r "${OUTPUT_PATH}"
-fi
-
-appcenter test generate uitest --platform "${PLATFORM}" --output-path "${OUTPUT_PATH}"
-
+npm install appcenter-cli@1.0.8 -g
+appcenter test generate uitest --platform android --output-path "${OUTPUT_PATH}"
 nuget restore -NonInteractive "${SOLUTION}"
-
 msbuild "${SOLUTION}" /p:Configuration=Release
-
 appcenter test prepare uitest --artifacts-dir "${ARTIFACTS_DIR}" --app-path "${app_path}" --build-dir "${BUILD_DIR}" --debug --quiet
 appcenter test run manifest --manifest-path "${MANIFEST_PATH}" --app-path "${app_path}" --app "${app_center_app}" --devices any_top_1_device --test-series launch-tests --locale en_US --debug --quiet --token "${app_center_token}"
 
