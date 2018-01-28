@@ -33,8 +33,8 @@ workflows:
         title: Step Test
         run_if: true
         inputs:
-        - app_path: /Users/tom/Documents/devops/bitrise/steps/UserDetailsClient.Droid.apk
-        - app_center_app: tomcurran/Azure-AD-B2C-Xamarin-Native-Sample
+        - app_path: UserDetailsClient.Droid.apk
+        - app_center_app: $APP_CENTER_APP
         - app_center_token: $APP_CENTER_TOKEN
 
 
