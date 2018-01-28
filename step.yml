@@ -33,7 +33,7 @@ toolkit:
   bash:
     entry_file: step.sh
 inputs:
-  - app_path:
+  - app_path: "$BITRISE_APK_PATH"
     opts:
       title: "App path"
       summary: ""
@@ -42,7 +42,7 @@ inputs:
       is_expand: true
       is_required: true
       value_options: []
-  - app_center_app:
+  - app_center_app: "$APP_CENTER_APP"
     opts:
       title: "App Center app"
       summary: username/app_name or org/app_name
@@ -51,7 +51,7 @@ inputs:
       is_expand: true
       is_required: true
       value_options: []
-  - app_center_token:
+  - app_center_token: "$APP_CENTER_TOKEN"
     opts:
       title: "App Center API token"
       summary: "App Ceneter APK token with access to app specified in app_center_app"
