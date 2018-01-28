@@ -3,6 +3,7 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
+  - APP_CENTER_APP: $APP_CENTER_APP
   - APP_CENTER_TOKEN: $APP_CENTER_TOKEN
   - BITRISE_STEP_ID: app-center-launch-test-android
   - BITRISE_STEP_VERSION: "0.0.1"
@@ -17,6 +18,7 @@ workflows:
         - content: |
             #!/bin/bash
             echo "Just an example 'secrets' print."
+            echo "The value of 'APP_CENTER_APP' is: $APP_CENTER_APP"
             echo "The value of 'APP_CENTER_TOKEN' is: $APP_CENTER_TOKEN"
     - change-workdir:
         title: Switch working dir to test / _tmp dir
