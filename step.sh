@@ -38,7 +38,7 @@ npm config list
 
 npm install appcenter-cli@1.0.5 -g
 
-LAUNCH_TEST_DIR="${BITRISE_SOURCE_DIR}/app-center-launch-test"
+LAUNCH_TEST_DIR="${BITRISE_SOURCE_DIR}/app-center-launch-test-android"
 OUTPUT_PATH="${LAUNCH_TEST_DIR}/GeneratedTest"
 ARTIFACTS_DIR="${LAUNCH_TEST_DIR}/Artifacts"
 PLATFORM="Android"
