@@ -1,4 +1,4 @@
-# App Center Launch Test
+# App Center Launch Test Android
 
 Verify that your build works on a real device by running a launch test on a real device
 
